@@ -4,16 +4,16 @@ using namespace std;
 
 int main() {
 
-	// Ãâ·Â ±âº»±¸¼º  std::cout<< 'Ãâ·Â´ë»ó1' << 'Ãâ·Â´ë»ó2' << 'Ãâ·Â´ë»ó3';
-	// cout : ÇÔ¼öX, °´Ã¼
-	// << : Ãâ·Â ¿¬»êÀÚ
-	// std::endlÃâ·Â : °³Çà
+	// ì¶œë ¥ ê¸°ë³¸êµ¬ì„±  std::cout<< 'ì¶œë ¥ëŒ€ìƒ1' << 'ì¶œë ¥ëŒ€ìƒ2' << 'ì¶œë ¥ëŒ€ìƒ3';
+	// cout : í•¨ìˆ˜X, ê°ì²´
+	// << : ì¶œë ¥ ì—°ì‚°ì
+	// std::endlì¶œë ¥ : ê°œí–‰
 
 	int num = 20;
-	cout << "Hello World" << std::endl;
-	cout << "Hello " << "World" << std::endl;
+	cout << "Hello World" << endl;
+	cout << "Hello " << "World" << endl;
 	cout << num << ' ' << 'A';
-	cout << ' ' << 3.14 << std::endl;
+	cout << ' ' << 3.14 << endl;
 
 	return 0;
 }
