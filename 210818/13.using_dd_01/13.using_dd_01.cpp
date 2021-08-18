@@ -12,9 +12,9 @@ namespace Hybrid
 
 int main()
 {
-	// usingÀ» ÀÌ¿ëÇØ¼­ 'ÀÌ¸§°ø°£ Hybrid¿¡ Á¤ÀÇµÈ HybFunc¸¦ È£ÃâÇÒ ¶§¿¡´Â ÀÌ¸§°ø°£À» ÁöÁ¤ÇÏÁö ¾Ê°í »ç¿ëÇÏ°Ú´Ù'´Â ¼±¾ð
+	// usingì„ ì´ìš©í•´ì„œ 'ì´ë¦„ê³µê°„ Hybridì— ì •ì˜ëœ HybFuncë¥¼ í˜¸ì¶œí•  ë•Œì—ëŠ” ì´ë¦„ê³µê°„ì„ ì§€ì •í•˜ì§€ ì•Šê³  ì‚¬ìš©í•˜ê² ë‹¤'ëŠ” ì„ ì–¸
 
 	using Hybrid::HybFunc;
-	HybFunc();	// using ¼±¾ðÀ» ÅëÇØ ÀÌ¸§°ø°£ÀÇ ÁöÁ¤ ¾øÀÌ HybFunc ÇÔ¼ö¸¦ È£Ãâ
-	return 0
+	HybFunc();	// using ì„ ì–¸ì„ í†µí•´ ì´ë¦„ê³µê°„ì˜ ì§€ì • ì—†ì´ HybFunc í•¨ìˆ˜ë¥¼ í˜¸ì¶œ
+	return 0;
 }
