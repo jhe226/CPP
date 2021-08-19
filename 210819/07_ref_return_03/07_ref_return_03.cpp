@@ -2,11 +2,9 @@
 
 using namespace std;
 
-// ¹İÈ¯ÇüÀÌ ÂüÁ¶ÀÌ°í ¹İÈ¯µµ ÂüÁ¶·Î ¹Ş´Â °æ¿ì
-
 int RefRetFuncTwo(int &ref)
 {
-	// ÂüÁ¶ÇüÀ¸·Î ¹İÈ¯
+	// ì°¸ì¡°í˜•ì´ ì•„ë‹Œ ê°’ìœ¼ë¡œ ë°˜í™˜
 	ref++;
 	return ref;
 }
@@ -14,7 +12,7 @@ int RefRetFuncTwo(int &ref)
 int main(void)
 {
 	int num1 = 1;
-	int num2 = RefRetFuncTwo(num1);	// ¹İÈ¯µµ ÂüÁ¶·Î ¹ŞÀ½
+	int num2 = RefRetFuncTwo(num1);
 
 	num1 += 1;
 	num2 += 100;
