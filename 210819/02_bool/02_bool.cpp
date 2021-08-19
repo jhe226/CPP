@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// ÀÚ·áÇü bool : true¿Í falseÀÇ ÀÚ·áÇü
+// ìë£Œí˜• bool : trueì™€ falseì˜ ìë£Œí˜•
 
 bool IsPositive(int num)
 {
