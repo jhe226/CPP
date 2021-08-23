@@ -27,8 +27,8 @@ public:
 
 	void ShowSalesResult()
 	{
-		cout << "³²Àº »ç°ú : " << numOfApples << endl;
-		cout << "ÆÇ¸Å ¼öÀÍ : " << myMoney << endl << endl;
+		cout << "ë‚¨ì€ ì‚¬ê³¼ : " << numOfApples << endl;
+		cout << "íŒë§¤ ìˆ˜ìµ : " << myMoney << endl << endl;
 	}
 };
 
@@ -52,8 +52,8 @@ public:
 
 	void ShowBuyResult()
 	{
-		cout << "ÇöÀç ÀÜ¾× : " << myMoney << endl;
-		cout << "»ç°ú °³¼ö : " << numOfApples << endl << endl;
+		cout << "í˜„ìž¬ ìž”ì•¡ : " << myMoney << endl;
+		cout << "ì‚¬ê³¼ ê°œìˆ˜ : " << numOfApples << endl << endl;
 	}
 };
 
@@ -66,9 +66,9 @@ int main()
 	buyer.InitMembers(5000);
 	buyer.BuyApples(seller, 2000);
 
-	cout << "°úÀÏ ÆÇ¸ÅÀÚÀÇ ÇöÈ²" << numOfApples << endl;
+	cout << "ê³¼ì¼ íŒë§¤ìžì˜ í˜„í™©" << endl;
 	seller.ShowSalesResult();
-	cout << "°úÀÏ ±¸¸ÅÀÚÀÇ ÇöÈ²" << myMoney << endl;
+	cout << "ê³¼ì¼ êµ¬ë§¤ìžì˜ í˜„í™©" << endl;
 	buyer.ShowBuyResult();
 	
 	return 0;
