@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// »ý¼ºÀÚ¿Í ¸¶Âù°¡Áö·Î ¼Ò¸êÀÚµµ Á¤ÀÇÇÏÁö ¾ÊÀ¸¸é µðÆúÆ® ¼Ò¸êÀÚ°¡ »ðÀÔ
+// ìƒì„±ìžì™€ ë§ˆì°¬ê°€ì§€ë¡œ ì†Œë©¸ìžë„ ì •ì˜í•˜ì§€ ì•Šìœ¼ë©´ ë””í´íŠ¸ ì†Œë©¸ìžê°€ ì‚½ìž…
 
 class Person
 {
@@ -14,10 +14,10 @@ private:
 public:
 	// Person(char* myname, int myage)
 	Person(const char* myname, int myage)
-		// ¹öÀüÀÌ ¿Ã¶ó°¡¸é¼­ ¸®ÅÍ·² ¹®ÀÚ¸¦ ÀÎÀÚ·Î ³Ñ±æ ¶§ ÀÎÀÚ Å¸ÀÔÀ» const·Î ¼±¾ðÇÏµµ·Ï ¹Ù²ñ
+		// ë²„ì „ì´ ì˜¬ë¼ê°€ë©´ì„œ ë¦¬í„°ëŸ´ ë¬¸ìžë¥¼ ì¸ìžë¡œ ë„˜ê¸¸ ë•Œ ì¸ìž íƒ€ìž…ì„ constë¡œ ì„ ì–¸í•˜ë„ë¡ ë°”ë€œ
 	{
-		// ºÒÇÊ¿äÇÑ ¸Þ¸ð¸® °ø°£ÀÇ ³¶ºñ ¶É´À ºÎÁ·À» ¸·±âÀ§ÇØ
-		// ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¸Å­ ¸Þ¸ð¸® °ø°£À» µ¿Àû ÇÒ´ç
+		// ë¶ˆí•„ìš”í•œ ë©”ëª¨ë¦¬ ê³µê°„ì˜ ë‚­ë¹„ ë˜ëŠ” ë¶€ì¡±ì„ ë§‰ê¸°ìœ„í•´
+		// ë¬¸ìžì—´ì˜ ê¸¸ì´ë§Œí¼ ë©”ëª¨ë¦¬ ê³µê°„ì„ ë™ì  í• ë‹¹
 
 		int len = strlen(myname) + 1;
 		strcpy(name, myname);
@@ -26,15 +26,15 @@ public:
 
 	void ShowPersonInfo() const
 	{
-		cout << "ÀÌ¸§ : " << name << endl;
-		cout << "³ªÀÌ : " << age << endl;
+		cout << "ì´ë¦„ : " << name << endl;
+		cout << "ë‚˜ì´ : " << age << endl;
 	}
 
 	~Person()
 	{
-		// »ý¼ºÀÚ¿¡¼­ ÇÒ´çÇÑ ¸Þ¸ð¸® °ø°£À» ¼Ò¸ê½ÃÅ°±â ÁÁÀº À§Ä¡°¡ ¼Ò¸êÀÚ
-		// ¸Þ¸ð¸® °ø°£ÀÇ ¼Ò¸ê¿¡ ´ëÇÑ ÄÚµå »ðÀÔ
-
+		// ìƒì„±ìžì—ì„œ í• ë‹¹í•œ ë©”ëª¨ë¦¬ ê³µê°„ì„ ì†Œë©¸ì‹œí‚¤ê¸° ì¢‹ì€ ìœ„ì¹˜ê°€ ì†Œë©¸ìž
+		// ë©”ëª¨ë¦¬ ê³µê°„ì˜ ì†Œë©¸ì— ëŒ€í•œ ì½”ë“œ ì‚½ìž…
+		cout << "ì´ë¦„ : " << name << endl;
 		delete[]name;
 		cout << "called destructor!" << endl;
 	}
