@@ -55,14 +55,39 @@ int main()
 	cout << &sim3 << endl;
 	cout << &sim1 << endl;
 
-	sim3 = sim1;
+	sim3 = sim1;	// 주소가 아닌 값을 복사
 	sim3.ShowSimpleData();
 	cout << &sim3 << endl;
 	cout << &sim1 << endl;
 
-	sim3.SetNum1(100);
-	sim3.ShowSimpleData();
-	sim1.ShowSimpleData();
+	sim3.SetNum1(100);	// 값 하나만 변경 -> 둘 중 하나만 바뀜 -> 값 복사 
+	sim3.ShowSimpleData();	// 100 30
+	sim1.ShowSimpleData();	// 15 30
+
+	// 얕은 복사의 경우 (참조 복사)
+	SoSimple *sim1New = new SoSimple(15, 30);
+	cout << "생성 및 초기화 직전" << endl;
+	SoSimple *sim2New = new SoSimple(15, 30);
+	sim2New->SetNum1(100);
+	sim1New->ShowSimpleData();	// 15 30
+	sim2New->ShowSimpleData();	// 15 30
+
+	// 주소값 확인 -> 서로 다름을 확인
+	cout << sim1New << endl;
+	cout << sim2New << endl;
+
+	sim2New = sim1New;
+	sim1New->ShowSimpleData();	// 15 30
+	sim2New->ShowSimpleData();	// 15 30
+
+	// 하나만 값 변경 -> 둘 다 달라짐 -> 주소 복사
+	sim2New->SetNum1(200);
+	sim1New->ShowSimpleData();	// 200 30
+	sim2New->ShowSimpleData();	// 200 30
+
+	// 동일한 주소 출력
+	cout << sim1New << endl;	
+	cout << sim2New << endl;
 
 	return 0;
 }
