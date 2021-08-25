@@ -7,7 +7,7 @@ using namespace std;
 
 void Counter()
 {
-	static int cnt = 0;
+	static int cnt;		// 0으로 초기화하지 않아도 	
 	cnt++;
 	cout << "Current cnt: " << cnt << endl;
 }
