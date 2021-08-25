@@ -11,7 +11,7 @@ private:
 public:
 	PointOP(): opcnt(0) 
 	{ }
-	Point PointAdd(const Point&, const Point&);		// Point Å¬·¡½ºÀÇ friend ÇÔ¼ö ºÎºĞ ¶§¹®¿¡ ¹Ì¸® ¼±¾ğ
+	Point PointAdd(const Point&, const Point&);		// Point í´ë˜ìŠ¤ì˜ friend í•¨ìˆ˜ ë¶€ë¶„ ë•Œë¬¸ì— ë¯¸ë¦¬ ì„ ì–¸
 	Point PointSub(const Point&, const Point&);
 	~PointOP()
 	{
@@ -27,18 +27,18 @@ private:
 public:
 	Point(const int& xpos, const int& ypos): x(xpos), y(ypos)
 	{ }
-	// ÇÔ¼öÀÇ friend ¼±¾ğ
+	// í•¨ìˆ˜ì˜ friend ì„ ì–¸
 
-	// ÀÌ·¸µí Å¬·¡½ºÀÇ Æ¯Á¤ ¸â¹ö ÇÔ¼ö¸¦ ´ë»óÀ¸·Îµµ friend ¼±¾ğÀÌ °¡´ÉÇÏ´Ù.
-	friend Point PointOP::PointAdd(const Point&, const Point&);		// ´Ù¸¥ Å¬·§±×ÀÇ ¸â¹ö ÇÔ¼ö
+	// ì´ë ‡ë“¯ í´ë˜ìŠ¤ì˜ íŠ¹ì • ë©¤ë²„ í•¨ìˆ˜ë¥¼ ëŒ€ìƒìœ¼ë¡œë„ friend ì„ ì–¸ì´ ê°€ëŠ¥í•˜ë‹¤.
+	friend Point PointOP::PointAdd(const Point&, const Point&);		// ë‹¤ë¥¸ í´ë˜ìŠ¤ì˜ ë©¤ë²„ í•¨ìˆ˜
 	friend Point PointOP::PointSub(const Point&, const Point&);
-	friend void ShowPointPos(const Point&);		// Àü¿ª ÇÔ¼ö, ¼±¾ğÀÇ ¿ªÇÒµµ ÇÔ
+	friend void ShowPointPos(const Point&);		// ì „ì—­ í•¨ìˆ˜, ì„ ì–¸ì˜ ì—­í• ë„ í•¨
 };
 
 Point PointOP::PointAdd(const Point& pnt1, const Point& pnt2)
 {
 	opcnt++;
-	return Point(pnt1.x + pnt2.x, pnt1.y + pnt2.y);		// private ¸â¹ö Á¢±Ù, friend ¼±¾ğµÈ ÇÔ¼ö¶ó¼­ °¡´É
+	return Point(pnt1.x + pnt2.x, pnt1.y + pnt2.y);		// private ë©¤ë²„ ì ‘ê·¼, friend ì„ ì–¸ëœ í•¨ìˆ˜ë¼ì„œ ê°€ëŠ¥
 }
 
 Point PointOP::PointSub(const Point& pnt1, const Point& pnt2)
@@ -59,9 +59,9 @@ int main()
 	return 0;
 }
 
-void ShowPointPos(const Point& pos)		// friend ¼±¾ğÀ¸·Î µû·Î ¼±¾ğÀÌ ÇÊ¿ä X
+void ShowPointPos(const Point& pos)		// friend ì„ ì–¸ìœ¼ë¡œ ë”°ë¡œ ì„ ì–¸ì´ í•„ìš” X
 {
-	// private ¸â¹ö Á¢±Ù
+	// private ë©¤ë²„ ì ‘ê·¼
 	cout << "x : " << pos.x << ", ";
 	cout << "y : " << pos.y << endl;
 }
