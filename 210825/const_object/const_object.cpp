@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// const¿Í ÇÔ¼ö ¿À¹ö·Îµù
+// constì™€ í•¨ìˆ˜ ì˜¤ë²„ë¡œë”©
 class SoSimple
 {
 private:
@@ -19,7 +19,7 @@ public:
 		return *this;
 	}
 
-	// ÇÔ¼öÀÇ const ¼±¾ğ À¯¹«´Â ÇÔ¼ö ¿À¹ö·ÎµùÀÇ Á¶°Ç
+	// í•¨ìˆ˜ì˜ const ì„ ì–¸ ìœ ë¬´ëŠ” í•¨ìˆ˜ ì˜¤ë²„ë¡œë”©ì˜ ì¡°ê±´
 	void SimpleFunc()
 	{
 		cout << "SimpleFunc : " << num << endl;
@@ -31,7 +31,7 @@ public:
 	}
 };
 
-// const °´Ã¼ ¶Ç´Â ÂüÁ¶ÀÚ¸¦ ´ë»óÀ¸·Î ¸â¹öÇÔ¼ö È£Ãâ ½Ã const ¼±¾ğµÈ ¸â¹öÇÔ¼ö°¡ ¼±¾ğµÈ´Ù.
+// const ê°ì²´ ë˜ëŠ” ì°¸ì¡°ìë¥¼ ëŒ€ìƒìœ¼ë¡œ ë©¤ë²„í•¨ìˆ˜ í˜¸ì¶œ ì‹œ const ì„ ì–¸ëœ ë©¤ë²„í•¨ìˆ˜ê°€ ëœë‹¤.
 SoSimple YourFunc(const SoSimple& obj)
 {
 	obj.SimpleFunc();
