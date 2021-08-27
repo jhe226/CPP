@@ -52,7 +52,12 @@ int main()
 	tptr->MyFunc();
 
 	fptr->FirstFunc();
+
+	sptr->FirstFunc();
 	sptr->SecondFunc();
+
+	tptr->FirstFunc();
+	tptr->SecondFunc();
 	tptr->ThirdFunc();
 
 	cout << fptr << ", " << sptr << ", " << tptr;
