@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-// Å¬·¡½º ÅÛÇÃ¸´
+// Ã…Â¬Â·Â¡Â½Âº Ã…Ã›Ã‡ÃƒÂ¸Â´
 
 template <typename T>
 class Point
@@ -25,7 +25,7 @@ int main()
 	Point<double> pos2(2.4, 3.6);
 	pos2.ShowPosition();
 
-	Point<int> pos3('P', 'F');
+	Point<char> pos3('P', 'F');
 	pos3.ShowPosition();
 
 	return 0;
