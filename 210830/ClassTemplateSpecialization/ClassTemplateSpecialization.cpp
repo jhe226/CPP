@@ -38,6 +38,8 @@ public:
 	}
 };
 
+// 클래스 템플릿 SimpleDataWrapper를 char* 형에 대해 특수화
+// 문자열 저장 -> 동적할당 기반의 생성자와 소멸자 별도 정의
 template <>
 class SimpleDataWrapper <char*>
 {
