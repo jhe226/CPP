@@ -4,8 +4,8 @@
 
 using namespace std;
 
-// Å¬·¡½º ÅÛÇÃ¸´ÀÇ Æ¯¼öÈ­
-// Æ¯Á¤ ÀÚ·áÇüÀ» ±â¹İÀ¸·Î »ı¼ºµÈ °´Ã¼¿¡ ´ëÇØ ±¸ºĞÀÌ µÇ´Â ´Ù¸¥ Çàµ¿ ¾ç½ÄÀ» Àû¿ëÇÏ±â À§ÇÔ
+// í´ë˜ìŠ¤ í…œí”Œë¦¿ì˜ íŠ¹ìˆ˜í™”
+// íŠ¹ì • ìë£Œí˜•ì„ ê¸°ë°˜ìœ¼ë¡œ ìƒì„±ëœ ê°ì²´ì— ëŒ€í•´ êµ¬ë¶„ì´ ë˜ëŠ” ë‹¤ë¥¸ í–‰ë™ ì–‘ì‹ì„ ì ìš©í•˜ê¸° ìœ„í•¨
 
 template <typename T>
 class Point
@@ -13,7 +13,7 @@ class Point
 private:
 	T xpos, ypos;
 public:
-	// ÀÏ¹İÀûÀÎ Å¬·¡½ºÃ³·³ ¸Å°³º¯¼öÀÇ µğÆúÆ® °ªÀº Å¬·¡½º ÅÛÇÃ¸´ ³»¿¡¼­¸¸ Ç¥Çö
+	// ì¼ë°˜ì ì¸ í´ë˜ìŠ¤ì²˜ëŸ¼ ë§¤ê°œë³€ìˆ˜ì˜ ë””í´íŠ¸ ê°’ì€ í´ë˜ìŠ¤ í…œí”Œë¦¿ ë‚´ì—ì„œë§Œ í‘œí˜„
 	Point(T x = 0, T y = 0) : xpos(x), ypos(y)
 	{ }
 	void ShowPosition() const
@@ -22,8 +22,8 @@ public:
 	}
 };
 
-// Å¬·¡½º ÅÛÇÃ¸´ SimpleDataWrapper°¡ Á¤ÀÇ
-// °£´ÜÈ÷ ÇÏ³ªÀÇ µ¥ÀÌÅÍ¸¦ ÀúÀå, ÀÌ µ¥ÀÌÅÍ¿¡ ´ã±ä Á¤º¸ Ãâ·ÂÇÏµµ·Ï Á¤ÀÇ
+// í´ë˜ìŠ¤ í…œí”Œë¦¿ SimpleDataWrapperê°€ ì •ì˜
+// ê°„ë‹¨íˆ í•˜ë‚˜ì˜ ë°ì´í„°ë¥¼ ì €ì¥, ì´ ë°ì´í„°ì— ë‹´ê¸´ ì •ë³´ ì¶œë ¥í•˜ë„ë¡ ì •ì˜
 template <typename T>
 class SimpleDataWrapper
 {
@@ -46,7 +46,8 @@ private:
 public:
 	SimpleDataWrapper(char*data)
 	{
-		
+		mdata = new char[strlen(data) + 1];
+		strcpy(mdata, data);
 	}
 
 	void ShowDataInfo(void)
@@ -61,7 +62,7 @@ public:
 	}
 };
 
-// Å¬·¡½º ÅÛÇÃ¸´ SimpleDataWrapperÀ» Point<int>Çü¿¡ ´ëÇØ Æ¯¼öÈ­
+// í´ë˜ìŠ¤ í…œí”Œë¦¿ SimpleDataWrapperì„ Point<int>í˜•ì— ëŒ€í•´ íŠ¹ìˆ˜í™”
 template <>
 class SimpleDataWrapper <Point<int>>
 {
@@ -79,17 +80,17 @@ public:
 
 int main()
 {
-	// intÇü¿¡ ´ëÇØ¼­´Â Æ¯¼öÈ­ ÁøÇà X -> ¾Æ·¡ ¹®ÀåÀÌ ÄÄÆÄÀÏ µÉ ¶§ SimpleDataWrapper <int>°¡ ¸¸µé¾îÁö°í,
-	// ÀÌ Å¬·¡½º¸¦ ±â¹İÀ¸·Î °´Ã¼ »ı¼º
+	// intí˜•ì— ëŒ€í•´ì„œëŠ” íŠ¹ìˆ˜í™” ì§„í–‰ X -> ì•„ë˜ ë¬¸ì¥ì´ ì»´íŒŒì¼ ë  ë•Œ SimpleDataWrapper <int>ê°€ ë§Œë“¤ì–´ì§€ê³ ,
+	// ì´ í´ë˜ìŠ¤ë¥¼ ê¸°ë°˜ìœ¼ë¡œ ê°ì²´ ìƒì„±
 	SimpleDataWrapper<int>iwrap(170);
 	iwrap.ShowDataInfo();
 
-	// char* Çü¿¡ ´ëÇØ¼­ Æ¯¼öÈ­ ÁøÇà O -> º°µµÀÇ ÅÛÇÃ¸´ Å¬·¡½º »ı¼º X, ¹Ì¸® Á¤ÀÇµÈ ÅÛÇÃ¸´ Å¬·¡½º °´Ã¼°¡ »ı¼º
+	// char* í˜•ì— ëŒ€í•´ì„œ íŠ¹ìˆ˜í™” ì§„í–‰ O -> ë³„ë„ì˜ í…œí”Œë¦¿ í´ë˜ìŠ¤ ìƒì„± X, ë¯¸ë¦¬ ì •ì˜ëœ í…œí”Œë¦¿ í´ë˜ìŠ¤ ê°ì²´ê°€ ìƒì„±
 	char arr[] = "Class Template Specialization";
 	SimpleDataWrapper<char *> swrap(arr);
 	swrap.ShowDataInfo();
 	
-	// Point<int> Çü¿¡ ´ëÇØ¼­ Æ¯¼öÈ­ ÁøÇà O -> º°µµÀÇ ÅÛÇÃ¸´ Å¬·¡½º »ı¼º X, ¹Ì¸® Á¤ÀÇµÈ ÅÛÇÃ¸´ Å¬·¡½º °´Ã¼°¡ »ı¼º
+	// Point<int> í˜•ì— ëŒ€í•´ì„œ íŠ¹ìˆ˜í™” ì§„í–‰ O -> ë³„ë„ì˜ í…œí”Œë¦¿ í´ë˜ìŠ¤ ìƒì„± X, ë¯¸ë¦¬ ì •ì˜ëœ í…œí”Œë¦¿ í´ë˜ìŠ¤ ê°ì²´ê°€ ìƒì„±
 	SimpleDataWrapper<Point<int>> poswrap(3, 7);
 	poswrap.ShowDataInfo();
 	return 0;
