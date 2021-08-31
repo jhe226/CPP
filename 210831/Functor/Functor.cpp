@@ -2,9 +2,9 @@
 
 using namespace std;
 
-// ()¿¬»êÀÚÀÇ ¿À¹ö·Îµù°ú ÆãÅÍ(Functor)
-// () ¿¬»êÀÚ : ÇÔ¼öÀÇ È£Ãâ ¹× ÀÎÀÚ Àü´Ş¿¡ »ç¿ëµÊ -> () ¿À¹ö·ÎµùÇÏ¸é °´Ã¼¸¦ ÇÔ¼öÃ³·³ »ç¿ë O
-// ÆãÅÍ : ÇÔ¼öÃ³·³ µ¿ÀÛÇÏ´Â Å¬·¡½º
+// ()ì—°ì‚°ìì˜ ì˜¤ë²„ë¡œë”©ê³¼ í‘í„°(Functor)
+// () ì—°ì‚°ì : í•¨ìˆ˜ì˜ í˜¸ì¶œ ë° ì¸ì ì „ë‹¬ì— ì‚¬ìš©ë¨ -> () ì˜¤ë²„ë¡œë”©í•˜ë©´ ê°ì²´ë¥¼ í•¨ìˆ˜ì²˜ëŸ¼ ì‚¬ìš© O
+// í‘í„° : í•¨ìˆ˜ì²˜ëŸ¼ ë™ì‘í•˜ëŠ” í´ë˜ìŠ¤
 
 class Point
 {
@@ -13,10 +13,10 @@ private:
 public:
 	Point(int x = 0, int y = 0) :xpos(x), ypos(y)
 	{ }
-	// Point °´Ã¼¿¡ ´ëÇÑ + ¿¬»êÀÚ ¿À¹ö·Îµù
-	Point operator+(const Point& pos) const	// operator¶ó´Â ÀÌ¸§ÀÇ ÇÔ¼ö
+	// Point ê°ì²´ì— ëŒ€í•œ + ì—°ì‚°ì ì˜¤ë²„ë¡œë”©
+	Point operator+(const Point& pos) const	// operatorë¼ëŠ” ì´ë¦„ì˜ í•¨ìˆ˜
 	{
-		// PointÇü ÀÓ½Ã °´Ã¼ -> »ı¼º°ú µ¿½Ã¿¡ ¹İÈ¯
+		// Pointí˜• ì„ì‹œ ê°ì²´ -> ìƒì„±ê³¼ ë™ì‹œì— ë°˜í™˜
 		return Point(xpos + pos.xpos, ypos + pos.ypos);
 	}
 	friend ostream& operator<<(ostream& os, const Point& pos);
@@ -30,7 +30,7 @@ ostream& operator<<(ostream& os, const Point& pos)
 class Adder
 {
 public:
-	// 3°³ÀÇ () ¿¬»êÀÚ°¡ 3È¸ ¿À¹ö·Îµù
+	// 3ê°œì˜ () ì—°ì‚°ìê°€ 3íšŒ ì˜¤ë²„ë¡œë”©
 	int operator()(const int& n1, const int& n2)
 	{
 		return n1 + n2;
@@ -49,8 +49,8 @@ int main()
 {
 	Adder adder;
 	cout << adder(1, 3) << endl;
-	cout << adder(1, 3) << endl;
-	cout << adder(1, 3) << endl;
+	cout << adder(1.5, 3.7) << endl;
+	cout << adder(Point(3, 4), Point(7, 9)) << endl;
 
 	return 0;
 }
