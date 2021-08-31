@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// �迭 Ŭ����
+// ¹è¿­ Å¬·¡½º
 
 class BoundCheckIntArray
 {
@@ -18,12 +18,13 @@ public:
 
 	int&operator[](int idx)
 	{
-		if (idx < 0 || idx >= arrlen)
+		if (idx < 0 || idx >= arrlen)	// 배열의 범위를 벗어난 경우
 		{
 			cout << "Array index out of bound exception" << endl;
 			exit(1);
 		}
 
+		// 배열을 참조형으로 반환
 		return arr[idx];
 	}
 	~BoundCheckIntArray()
